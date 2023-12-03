@@ -183,7 +183,8 @@ for i in range(8):
 result = pd.DataFrame.from_dict(result).T.reset_index()
 result = result.rename(columns={0:'concentrate', 'index':'color'})
 
+conc = result['concentrate'].tolist()
+conc=[i*(10**(-math.log10(max(conc)))) for i in conc]
+print(conc)
 # plt.title("concentration")
 # plt.bar(result['color'], result['concentrate'])
-
-print(result['concentrate'].tolist())
