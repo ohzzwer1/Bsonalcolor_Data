@@ -86,13 +86,7 @@ def apply_bandpass_filter(df, column_name, lowcut, highcut, fs, wave, order=5):
     return df
 
 # 주파수와 주기를 정의
-def theta(column):
-    q99_value = df[column+'_FFT'].quantile(0.93)
-    q1_value = df[column+'_FFT'].quantile(0.07)
-
-    # IQR을 기반으로 이를 벗어나는 데이터 제거
-    df_filtered = df[(df[column+'_FFT'] >= q1_value) & (df[column+'_FFT'] <= q99_value)]
-    df_filtered=df_filtered.reset_index().drop('index', axis=1)
+def theta(column, df_filtered):
 
     lowcut = 4.0  # 최저 주파수 (Hz)
     highcut = 8.0  # 최고 주파수 (Hz)
@@ -113,13 +107,7 @@ def theta(column):
     return df_filtered[column+'_FFT_theta_filtered']
 
 # 주파수와 주기를 정의
-def SMR(column):
-    q99_value = df[column+'_FFT'].quantile(0.93)
-    q1_value = df[column+'_FFT'].quantile(0.07)
-
-    # IQR을 기반으로 이를 벗어나는 데이터 제거
-    df_filtered = df[(df[column+'_FFT'] >= q1_value) & (df[column+'_FFT'] <= q99_value)]
-    df_filtered=df_filtered.reset_index().drop('index', axis=1)
+def SMR(column,df_filtered):
 
     lowcut = 12.0  # 최저 주파수 (Hz)
     highcut = 15.0  # 최고 주파수 (Hz)
@@ -140,13 +128,7 @@ def SMR(column):
     return df_filtered[column+'_FFT_SMR_filtered']
 
 # 주파수와 주기를 정의
-def mid_beta(column):
-    q99_value = df[column+'_FFT'].quantile(0.93)
-    q1_value = df[column+'_FFT'].quantile(0.07)
-
-    # IQR을 기반으로 이를 벗어나는 데이터 제거
-    df_filtered = df[(df[column+'_FFT'] >= q1_value) & (df[column+'_FFT'] <= q99_value)]
-    df_filtered=df_filtered.reset_index().drop('index', axis=1)
+def mid_beta(column,df_filtered):
 
     lowcut = 15.0  # 최저 주파수 (Hz)
     highcut = 18.0  # 최고 주파수 (Hz)
@@ -162,16 +144,24 @@ def mid_beta(column):
     # plt.show()
     return df_filtered[column+'_FFT_mid_beta_filtered']
 
-df['AF7_FFT_theta_filtered'] = theta('AF7')
-df['AF7_FFT_SMR_filtered'] = SMR('AF7')
-df['AF7_FFT_mid_beta_filtered'] = mid_beta('AF7')
-print(df.columns)
-print(df['AF7_FFT_mid_beta_filtered'])
+q99_value = df['AF7_FFT'].quantile(0.93)
+q1_value = df['AF7_FFT'].quantile(0.07)
+
+# IQR을 기반으로 이를 벗어나는 데이터 제거
+df_filtered = df[(df[column+'_FFT'] >= q1_value) & (df[column+'_FFT'] <= q99_value)]
+df_filtered=df_filtered.reset_index().drop('index', axis=1)
+
+df = df_filtered
+df['AF7_FFT_theta_filtered'] = theta('AF7', df)
+df['AF7_FFT_SMR_filtered'] = SMR('AF7', df)
+df['AF7_FFT_mid_beta_filtered'] = mid_beta('AF7', df)
+# print(df.columns)
+# print(df['AF7_FFT_mid_beta_filtered'])
 
 """### 집중도"""
 
-def get_con(df):
-    concentrate = (df['AF7_FFT_mid_beta_filtered'] + df['AF7_FFT_SMR_filtered'])/df['AF7_FFT_theta_filtered']
+def get_con(f):
+    concentrate = (f['AF7_FFT_mid_beta_filtered'] + f['AF7_FFT_SMR_filtered'])/f['AF7_FFT_theta_filtered']
     concentrate.dropna(inplace=True)
 
     q99_value = concentrate.quantile(0.99)
@@ -186,7 +176,7 @@ dfs = []
 for i in df['Label'].unique().tolist():
     dfs.append(df[df['Label']==i])
 
-for i in range(len(color)):
+for i in range(8):
     con = get_con(dfs[i])
     result[color[i]]=[np.mean(con)]
 
