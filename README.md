@@ -1,1 +1,22 @@
-# Bsonalcolor_Data
+# 브스널컬러
+### 🧠 집중력 향상을 위한 뇌파 자극 개인 맞춤형 스마트 무드등 💡
+
+![1](https://github.com/ohzzwer1/.github/assets/102468718/1ee4b9a1-fb14-4b28-8799-0b293e9e6990)
+![2](https://github.com/ohzzwer1/.github/assets/102468718/6f56fd6c-0207-4325-9047-e2070182d776)
+![3](https://github.com/ohzzwer1/.github/assets/102468718/c14b4357-ab31-4071-9a46-66fe10f966f5)
+![4](https://github.com/ohzzwer1/.github/assets/102468718/02579f44-47f8-4779-91d6-5af5991f5ca3)
+![5](https://github.com/ohzzwer1/.github/assets/102468718/28419484-6de4-46ca-81d3-7252f0be830b)
+![6](https://github.com/ohzzwer1/.github/assets/102468718/77706953-b8b9-4b3f-822e-acc4fa563f77)
+![7](https://github.com/ohzzwer1/.github/assets/102468718/f32a59d8-d18d-40bc-8427-adb33dbf98ae)
+![8](https://github.com/ohzzwer1/.github/assets/102468718/83d863b5-2670-4b00-9d59-52c3267dd1a3)
+![9](https://github.com/ohzzwer1/.github/assets/102468718/4d9e77a0-a3fd-45c7-a297-01b45570bca6)
+![10](https://github.com/ohzzwer1/.github/assets/102468718/be2d8877-3554-4b31-8ad1-e7fe70e7ea4e)
+![11](https://github.com/ohzzwer1/.github/assets/102468718/82d497fb-1ddf-4d4d-bea6-bfae9674482b)
+![12](https://github.com/ohzzwer1/.github/assets/102468718/8f7be90e-cc77-4045-b891-f09d34eb71a1)
+![13](https://github.com/ohzzwer1/.github/assets/102468718/ee2b91b4-bc2a-49f8-b462-52e2acf925ae)
+![14](https://github.com/ohzzwer1/.github/assets/102468718/ad5a04c6-10c3-4228-815c-921145eb1b92)
+![15](https://github.com/ohzzwer1/.github/assets/102468718/c8b0296e-9180-4df8-85ea-22608f78519c)
+![16](https://github.com/ohzzwer1/.github/assets/102468718/d731ff73-5cf5-4f53-9e21-e28acc93d156)
+![17](https://github.com/ohzzwer1/.github/assets/102468718/cca6638f-cf91-4ad8-9e9b-b9b0bb3d51a8)
+![18](https://github.com/ohzzwer1/.github/assets/102468718/8bb56250-5dc2-4b1e-8e4b-4bb832c1491e)
+![19](https://github.com/ohzzwer1/.github/assets/102468718/eb76b8ec-1d79-4937-a90d-b83fdcc95649)
